@@ -1,14 +1,19 @@
 body {
   background-color: #202020;
   color: white;
+  position: relative;
+  overflow: hidden;
 }
 
 /* Estilos generales para la navegación */
+
+
 .nav {
   background-color: #333; /* Color de fondo de la barra de navegación */
   color: #fff; /* Color del texto de la barra de navegación */
   padding: 1em 0; 
   text-align: center;
+  border-radius: 10px;
 }
 
 .nav ul {
@@ -34,3 +39,15 @@ body {
   color: #fff; 
   
 }
+
+.footer {
+     /* Posicionar el pie de página de forma absoluta */
+    bottom: 0; /* Posicionarlo en la parte inferior */
+    width: 100%; /* Ancho completo del viewport */
+    background-color: #292929; /* Color de fondo */
+    color: #fff; /* Color del texto */
+    padding: 1em 0; 
+    text-align: center; 
+    font-size: 20px;
+  }
+
