@@ -37,32 +37,37 @@ La interfaz de usuario está diseñada con un estilo minimalista y una paleta de
     bash
     python -m venv venv  
     venv\Scripts\activate 
-        
+    
 
-3. *Aplicar las migraciones:*
+3. *Instalar las dependencias:*
+    bash
+    pip install -r requirements.txt
+    
+
+4. *Aplicar las migraciones:*
     bash
     py manage.py makemigrations
     py manage.py migrate
     
 
-4. *Crear un superusuario:*
+5. *Crear un superusuario:*
     bash
     python manage.py createsuperuser
     
 
-5. *Ejecutar el servidor de desarrollo:*
+6. *Ejecutar el servidor de desarrollo:*
     bash
     python manage.py runserver
     
 
-6. *Acceder a la aplicación en tu navegador:*
+7. *Acceder a la aplicación en tu navegador:*
     
     Abre tu navegador web y ve a http://127.0.0.1:8000/.
     
 
-9. *Iniciar sesión en el panel de administración:*
+8. *Iniciar sesión en el panel de administración:*
     
     Accede a http://127.0.0.1:8000/admin/ y utiliza las credenciales del superusuario que creaste en el paso 5.
     
 
-## Explora y disfruta de Sistema de Gestión de tikets!** 🎉
+## Explora y disfruta de Sistema de Gestión de Tickets!** 🎉
