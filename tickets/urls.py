@@ -3,6 +3,7 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('anadirTickets/', views.anadirTickets, name='anadirTickets'),
     path('clienteEnEspera/', views.clienteEnEspera, name='clienteEnEspera'),
     path('clienteAtendidos/', views.clienteAtendidos, name='clienteAtendidos'),
     # path('ver_ticket_actual/', ver_ticket_actual, name='ver_ticket_actual'),

@@ -5,11 +5,16 @@ from django.shortcuts import render
 def index(request):
     return render(request, 'index.html')
 
+def anadirTickets(request):
+    return render(request, 'anadirTickets.html')
+
 def clienteEnEspera(request):
     return render(request, 'clienteEnEspera.html')
 
 def clienteAtendidos(request):
     return render(request, 'clienteAtendidos.html')
+
+
 
     # if request.method == 'POST':
     #     form = TicketForm(request.POST)
