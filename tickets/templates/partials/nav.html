@@ -5,41 +5,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Nav </title>
-    <link rel="stylesheet" href="{% static '/css/main.css'%}">
+    <title> Gestion de Tickets </title>
 </head>
 <body>
     
-    <nav class='nav'>
+    <nav>
         <ul>
             <li>
-                <a href="{% url "index" %}"> Home </a>
-            </li>
-
-
-
-
-            
-            {% comment %} <li>
-                <a href="{% url "about" %}"> About </a>
+                <a href="{% url "index" %}"> Añadir Tickets </a>
             </li>
             <li>
-                <a href="{% url "projects" %}"> Projects </a>
+                <a href="{% url "clienteEnEspera" %}"> Clientes en espera </a>
             </li>
             <li>
-                <a href="{% url "tasks" %}"> Tasks </a>
+                <a href="{% url "clienteAtendidos" %}"> Clientes Atendidos </a>
             </li>
-            <li>
-                <a href="{% url "create_task" %}"> Create Tasks </a>
-            </li>
-            <li>
-                <a href="{% url "create_project" %}"> Create Project </a>
-            </li> {% endcomment %}
-            
         </ul>
     </nav>
     
-    <main class='container'>
+    <main>
         {% block content %}
         {% endblock %}
     </main>
