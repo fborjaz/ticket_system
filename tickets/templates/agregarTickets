@@ -1,0 +1,13 @@
+{% extends 'partials/nav.html' %}
+{% load static %}
+
+{% block content %}
+    
+    <h1> Agregar: </h1>
+
+
+
+
+
+
+{% endblock %}

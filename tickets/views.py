@@ -14,6 +14,12 @@ def clienteEnEspera(request):
 def clienteAtendidos(request):
     return render(request, 'clienteAtendidos.html')
 
+def agregarTickets(request):
+    return render(request, 'agregarTickets.html')
+
+def verCliente(request):
+    return render(request, 'verCliente.html')
+
 
 
     # if request.method == 'POST':
