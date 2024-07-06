@@ -1,13 +1,29 @@
-# from django import forms
-# from .models import Ticket
+from django import forms
+from .models import Cliente, Ticket
 
-# class TicketForm(forms.ModelForm):
-#     class Meta:
-#         model = Ticket
-#         fields = ['nombre', 'email', 'descripcion', 'prioridad']
+class ClienteForm(forms.ModelForm):
+    class Meta:
+        model = Cliente
+        fields = ['nombre', 'email']  # Use 'email' for the email field
+        labels = {
+            'nombre': 'Nombre',  
+            'email': 'Correo electrónico',
+        }
 
-#     def clean_prioridad(self):
-#         prioridad = self.cleaned_data['prioridad']
-#         if not 1 <= prioridad <= 5:
-#             raise forms.ValidationError('La prioridad debe estar entre 1 y 5')
-#         return prioridad
+class TicketForm(forms.ModelForm):
+    class Meta:
+        model = Ticket
+        fields = ['cliente', 'descripcion', 'prioridad']
+        labels = {
+            'cliente': 'Cliente',
+            'descripcion': 'Descripción',
+            'prioridad': 'Prioridad',
+        }
+
+class TicketUpdateForm(forms.ModelForm):
+    class Meta:
+        model = Ticket
+        fields = ['atendido']
+        labels = {
+            'atendido': '¿Atendido?', 
+        }

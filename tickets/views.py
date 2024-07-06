@@ -1,24 +1,50 @@
-from django.shortcuts import render
-
-# Create your views here.
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from .models import Ticket, Cliente
+from .forms import TicketForm, ClienteForm
 
 def index(request):
     return render(request, 'index.html')
 
 def anadirTickets(request):
-    return render(request, 'anadirTickets.html')
+    if request.method == 'POST':
+        form = TicketForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Ticket añadido con éxito.')
+            return redirect('index')
+        else:
+            messages.error(request, 'Por favor, corrija los errores a continuación.')
+    else:
+        form = TicketForm()
+    return render(request, 'anadirTickets.html', {'form': form})
 
 def clienteEnEspera(request):
-    return render(request, 'clienteEnEspera.html')
+    tickets = Ticket.objects.filter(atendido=False)
+    return render(request, 'clienteEnEspera.html', {'tickets': tickets})
 
 def clienteAtendidos(request):
-    return render(request, 'clienteAtendidos.html')
+    tickets = Ticket.objects.filter(atendido=True)
+    return render(request, 'clienteAtendidos.html', {'tickets': tickets})
 
 def agregarTickets(request):
-    return render(request, 'agregarTickets.html')
+    if request.method == 'POST':
+        form = ClienteForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Cliente añadido con éxito.')
+            return redirect('agregarTickets')
+        else:
+            messages.error(request, 'Por favor, corrija los errores a continuación.')
+    else:
+        form = ClienteForm()
+    return render(request, 'agregarTickets.html', {'form': form})
 
-def verCliente(request):
-    return render(request, 'verCliente.html')
+def verCliente(request, cliente_id):
+    cliente = Cliente.objects.get(id=cliente_id)
+    tickets = Ticket.objects.filter(cliente=cliente)
+    return render(request, 'verCliente.html', {'cliente': cliente, 'tickets': tickets})
+
 
 
 

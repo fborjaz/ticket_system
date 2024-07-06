@@ -7,5 +7,5 @@ urlpatterns = [
     path('agregarTickets/', views.agregarTickets, name='agregarTickets'),
     path('clienteEnEspera/', views.clienteEnEspera, name='clienteEnEspera'),
     path('clienteAtendidos/', views.clienteAtendidos, name='clienteAtendidos'),
-    path('verCliente/', views.verCliente, name='verCliente'),
+    path('verCliente/<int:cliente_id>/', views.verCliente, name='verCliente'),
 ]
